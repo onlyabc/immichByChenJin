@@ -2558,6 +2558,58 @@
         ]
       }
     },
+    "/holoviewer": {
+      "get": {
+        "operationId": "checkService",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": ""
+          }
+        },
+        "tags": [
+          "Holoviewer"
+        ]
+      }
+    },
+    "/holoviewer/preview": {
+      "get": {
+        "operationId": "preview",
+        "parameters": [
+          {
+            "name": "downloadUrl",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "originalName",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "Holoviewer"
+        ]
+      }
+    },
     "/jobs": {
       "get": {
         "operationId": "getAllJobsStatus",

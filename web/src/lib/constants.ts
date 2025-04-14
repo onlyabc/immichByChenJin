@@ -10,6 +10,7 @@ export enum AssetAction {
   ADD_TO_ALBUM = 'add-to-album',
   UNSTACK = 'unstack',
   KEEP_THIS_DELETE_OTHERS = 'keep-this-delete-others',
+  VIEW_3D = 'view-3d',
 }
 
 export enum AppRoute {

@@ -48,6 +48,7 @@
   import { canCopyImageToClipboard } from '$lib/utils/asset-utils';
   import { t } from 'svelte-i18n';
   import type { Snippet } from 'svelte';
+  import View3DAction from '$lib/components/asset-viewer/actions/view-3d-action.svelte';
 
   interface Props {
     asset: AssetResponseDto;
@@ -139,6 +140,7 @@
 
     {#if isOwner}
       <FavoriteAction {asset} {onAction} />
+      <View3DAction {asset} {onAction} />
     {/if}
     <!-- {#if showEditorButton}
       <CircleIconButton

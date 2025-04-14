@@ -25,6 +25,7 @@ import { teardownTelemetry, TelemetryRepository } from 'src/repositories/telemet
 import { services } from 'src/services';
 import { AuthService } from 'src/services/auth.service';
 import { CliService } from 'src/services/cli.service';
+import { HoloviewerModule } from './holoviewer/holoviewer.module';
 
 const common = [...repositories, ...services, GlobalExceptionFilter];
 
@@ -99,7 +100,7 @@ class BaseModule implements OnModuleInit, OnModuleDestroy {
 }
 
 @Module({
-  imports: [...imports, ScheduleModule.forRoot()],
+  imports: [...imports, ScheduleModule.forRoot(), HoloviewerModule],
   controllers: [...controllers],
   providers: [...common, ...middleware, { provide: IWorker, useValue: ImmichWorker.API }],
 })
